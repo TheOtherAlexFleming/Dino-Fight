@@ -95,8 +95,9 @@
 }
 
 .dino-thumb:hover {
-  transform: translateX(-0.5em) translateY(-0.5em);
-  box-shadow: 1em 0.75em 0.25em 0 #000000;
+  transform: translateX(-0.25em) translateY(-0.25em);
+  box-shadow: 0.75em 0.5em 0.25em 0 #000000;
+  cursor: pointer;
 }
 
 .dino-thumb.active {

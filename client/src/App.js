@@ -6,6 +6,7 @@ import { testRexes } from "./Assets/testRexes.js";
 
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
+  const [ActiveDinos, setActiveDinos] = useState(["625a383a80f43579eaf4c9f2"]);
   console.log(Dinos);
   return (
     <div className="wrapper">
@@ -14,7 +15,11 @@ const App = () => {
         <img src={palms} className="palms flipped" />
       </div>
       <h1>App</h1>
-      <DinoSelect Dinos={Dinos} />
+      <DinoSelect
+        Dinos={Dinos}
+        ActiveDinos={ActiveDinos}
+        setActiveDinos={setActiveDinos}
+      />
     </div>
   );
 };
