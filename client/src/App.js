@@ -7,7 +7,6 @@ import { testRexes } from "./Assets/testRexes.js";
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
   const [ActiveDinos, setActiveDinos] = useState(["625a383a80f43579eaf4c9f2"]);
-  console.log(Dinos);
   return (
     <div className="wrapper">
       <div className="background-palms">
