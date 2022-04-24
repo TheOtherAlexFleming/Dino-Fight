@@ -7,15 +7,12 @@ const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
   }
 
   const toggleActive = () => {
-    console.log(ActiveDinos);
     if (ActiveDinos.includes(Dino._id)) {
-      console.log("id is in there");
       setActiveDinos(ActiveDinos.filter((DinoId) => DinoId != Dino._id));
     } else if (ActiveDinos.length > 1) {
-      console.log("2big.jpg");
-      setActiveDinos([ActiveDinos[1], Dino._id]);
+      // setActiveDinos([ActiveDinos[1], Dino._id]);
+      return;
     } else {
-      console.log("adding");
       setActiveDinos([...ActiveDinos, Dino._id]);
     }
   };

@@ -92,6 +92,7 @@
   height: 7.5rem;
   border-radius: 50%;
   border: 4px solid var(--black);
+  background-color: var(--white);
 }
 
 .dino-thumb:hover {
@@ -118,4 +119,46 @@
 
   background: #fa824c;
   border-radius: 99px;
+}
+
+.main-dinos {
+  margin: 15vh 10vw 0 10vw;
+  max-width: 80vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.main-dino-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.25);
+  min-width: 40vw;
+  min-height: 40vh;
+  aspect-ratio: 1;
+}
+
+.big-dino {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 69%;
+  height: 69%;
+  background-color: var(--black);
+}
+
+.big-dino-name {
+  position: absolute;
+  top: 69%;
+  text-transform: uppercase;
+  font-size: 3em;
+  right: 0;
+}
+
+.chart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 40%;
+  background-color: rgba(0, 0, 0, 0.25);
 }

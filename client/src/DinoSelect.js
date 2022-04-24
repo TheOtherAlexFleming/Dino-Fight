@@ -9,9 +9,9 @@ const DinoSelect = ({ Dinos, ActiveDinos, setActiveDinos }) => {
       className="dino-selection"
       style={{ backgroundImage: `url(${splat})`, backgroundSize: "cover" }}
     >
+      {/* Iterate over dinos stored in state */}
       <div className="dino-avatars">
-        {/* {Dinos.map((Dino) => {
-          console.log("Passing " + Dino._id);
+        {Dinos.map((Dino) => {
           return (
             <DinoAvatar
               Dino={Dino}
@@ -19,12 +19,7 @@ const DinoSelect = ({ Dinos, ActiveDinos, setActiveDinos }) => {
               ActiveDinos={ActiveDinos}
             />
           );
-        })} */}
-        <DinoAvatar
-          Dino={{ ...Dinos[0], _id: "testyboi" }}
-          ActiveDinos={ActiveDinos}
-          setActiveDinos={setActiveDinos}
-        />
+        })}
       </div>
       <button className="add-dino-btn">Add Dino</button>
     </div>

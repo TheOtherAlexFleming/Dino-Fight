@@ -3,12 +3,18 @@ import "./App.css";
 import palms from "./Assets/palms.png";
 import DinoSelect from "./DinoSelect.js";
 import { testRexes } from "./Assets/testRexes.js";
+import DinoLeft from "./DinoLeft.js";
+import DinoRight from "./DinoRight.js";
 
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
-  const [ActiveDinos, setActiveDinos] = useState(["625a383a80f43579eaf4c9f2"]);
+  const [ActiveDinos, setActiveDinos] = useState([]);
   return (
     <div className="wrapper">
+      <div className="main-dinos" style={{ position: "absolute" }}>
+        <DinoLeft />
+        <DinoRight />
+      </div>
       <div className="background-palms">
         <img src={palms} className="palms" />
         <img src={palms} className="palms flipped" />
