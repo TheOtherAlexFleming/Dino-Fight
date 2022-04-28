@@ -5,15 +5,17 @@ import DinoSelect from "./DinoSelect.js";
 import { testRexes } from "./Assets/testRexes.js";
 import DinoLeft from "./DinoLeft.js";
 import DinoRight from "./DinoRight.js";
+import AddDinoModal from "./AddDinoModal.js";
 
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
   const [ActiveDinos, setActiveDinos] = useState([]);
   return (
     <div className="wrapper">
+      <AddDinoModal />
       <div className="main-dinos">
         <DinoLeft />
-        <DinoRight />
+        <DinoRight rightDino={ActiveDinos[1]} />
       </div>
       <div className="background-palms">
         <img src={palms} className="palms" />
