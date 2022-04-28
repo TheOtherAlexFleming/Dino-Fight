@@ -11,7 +11,7 @@ const App = () => {
   const [ActiveDinos, setActiveDinos] = useState([]);
   return (
     <div className="wrapper">
-      <div className="main-dinos" style={{ position: "absolute" }}>
+      <div className="main-dinos">
         <DinoLeft />
         <DinoRight />
       </div>
@@ -19,7 +19,6 @@ const App = () => {
         <img src={palms} className="palms" />
         <img src={palms} className="palms flipped" />
       </div>
-      <h1>App</h1>
       <DinoSelect
         Dinos={Dinos}
         ActiveDinos={ActiveDinos}

@@ -2,6 +2,8 @@ import React from "react";
 
 const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
   let active = false;
+
+  //active dino management
   if (ActiveDinos.includes(Dino._id)) {
     active = true;
   }
@@ -10,6 +12,7 @@ const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
     if (ActiveDinos.includes(Dino._id)) {
       setActiveDinos(ActiveDinos.filter((DinoId) => DinoId != Dino._id));
     } else if (ActiveDinos.length > 1) {
+      // not sure if we want to auto-remove the last selected dino, first, or neither
       // setActiveDinos([ActiveDinos[1], Dino._id]);
       return;
     } else {
