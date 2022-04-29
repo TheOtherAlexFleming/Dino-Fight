@@ -4,7 +4,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",
@@ -18,9 +18,9 @@ export const testRexes = [
     name: "Triceratops",
     image:
       "https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1440,f_auto/Triceratops_left_cepidt.png",
-    size: 9,
+    size: 7,
     defence: 8,
-    attack: 7,
+    attack: 4,
     specialAbilityText: "None",
     specialAbilityRating: 0,
     createdAt: "2022-04-16T03:31:37.342Z",
@@ -32,7 +32,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",
@@ -46,7 +46,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",
@@ -60,7 +60,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",
@@ -74,7 +74,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",
@@ -88,7 +88,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",
@@ -102,7 +102,7 @@ export const testRexes = [
     name: "Tyrannosaurus Rex",
     image:
       "https://i.insider.com/5c81951a26289802157a2e89?width=750&format=jpeg&auto=webp",
-    size: 12,
+    size: 6,
     defence: 5,
     attack: 8,
     specialAbilityText: "None",

@@ -6,6 +6,7 @@ import { testRexes } from "./Assets/testRexes.js";
 import DinoLeft from "./DinoLeft.js";
 import DinoRight from "./DinoRight.js";
 import AddDinoModal from "./AddDinoModal.js";
+import DinoChart from "./DinoChart.js";
 
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
@@ -14,7 +15,7 @@ const App = () => {
     <div className="wrapper">
       <AddDinoModal />
       <div className="main-dinos">
-        <DinoLeft />
+        <DinoLeft leftDino={ActiveDinos[0]} />
         <DinoRight rightDino={ActiveDinos[1]} />
       </div>
       <div className="background-palms">

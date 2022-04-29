@@ -4,19 +4,19 @@ const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
   let active = false;
 
   //active dino management
-  if (ActiveDinos.includes(Dino._id)) {
+  if (ActiveDinos.includes(Dino)) {
     active = true;
   }
 
   const toggleActive = () => {
-    if (ActiveDinos.includes(Dino._id)) {
-      setActiveDinos(ActiveDinos.filter((DinoId) => DinoId != Dino._id));
+    if (ActiveDinos.includes(Dino)) {
+      setActiveDinos(ActiveDinos.filter((ActiveDino) => ActiveDino != Dino));
     } else if (ActiveDinos.length > 1) {
       // not sure if we want to auto-remove the last selected dino, first, or neither
       // setActiveDinos([ActiveDinos[1], Dino._id]);
       return;
     } else {
-      setActiveDinos([...ActiveDinos, Dino._id]);
+      setActiveDinos([...ActiveDinos, Dino]);
     }
   };
 
