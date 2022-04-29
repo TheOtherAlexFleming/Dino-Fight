@@ -1,8 +1,8 @@
 import React from "react";
 
-const AddDinoModal = () => {
+const AddDinoModal = ({ isModalOpen, setIsModalOpen }) => {
   return (
-    <div className="modal-container">
+    <div className={`modal-container ${isModalOpen ? "" : "hidden"}`}>
       <div className="modal">
         <h2>Add Dino</h2>
         <form className="add-dino-form" action="">

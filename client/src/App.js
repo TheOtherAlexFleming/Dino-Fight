@@ -11,9 +11,11 @@ import DinoChart from "./DinoChart.js";
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
   const [ActiveDinos, setActiveDinos] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="wrapper">
-      <AddDinoModal />
+      <AddDinoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
       <div className="main-dinos">
         <DinoLeft leftDino={ActiveDinos[0]} />
         <DinoRight rightDino={ActiveDinos[1]} />
@@ -26,6 +28,8 @@ const App = () => {
         Dinos={Dinos}
         ActiveDinos={ActiveDinos}
         setActiveDinos={setActiveDinos}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
       />
     </div>
   );

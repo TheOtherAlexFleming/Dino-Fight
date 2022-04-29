@@ -2,7 +2,13 @@ import React from "react";
 import splat from "./Assets/splat.svg";
 import DinoAvatar from "./DinoAvatar.js";
 
-const DinoSelect = ({ Dinos, ActiveDinos, setActiveDinos }) => {
+const DinoSelect = ({
+  Dinos,
+  ActiveDinos,
+  setActiveDinos,
+  isModalOpen,
+  setIsModalOpen,
+}) => {
   console.log(Dinos);
   return (
     <div
@@ -21,7 +27,12 @@ const DinoSelect = ({ Dinos, ActiveDinos, setActiveDinos }) => {
           );
         })}
       </div>
-      <button className="add-dino-btn">Add Dino</button>
+      <button
+        className="add-dino-btn"
+        onClick={() => setIsModalOpen(!isModalOpen)}
+      >
+        Add Dino
+      </button>
     </div>
   );
 };
