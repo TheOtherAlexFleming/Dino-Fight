@@ -7,15 +7,29 @@ import DinoLeft from "./DinoLeft.js";
 import DinoRight from "./DinoRight.js";
 import AddDinoModal from "./AddDinoModal.js";
 import DinoChart from "./DinoChart.js";
+import axios from "axios";
 
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
   const [ActiveDinos, setActiveDinos] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const getAllDinos = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/dinos", {
+        crossdomain: true,
+      });
+      const data = response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="wrapper">
       <AddDinoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+      <button onClick={() => getAllDinos()}>get dinos</button>
       <div className="main-dinos">
         <DinoLeft leftDino={ActiveDinos[0]} />
         <DinoRight rightDino={ActiveDinos[1]} />

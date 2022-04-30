@@ -27,7 +27,7 @@ const DinoLeft = ({ leftDino }) => {
           />
         </div>
         <h2 className="big-dino-name">{leftDino ? leftDino.name : "Select"}</h2>
-        <div className="chart">chart goes here lol</div>
+        <div className="chart"></div>
       </div>
     );
   }
