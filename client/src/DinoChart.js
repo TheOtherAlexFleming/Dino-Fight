@@ -37,11 +37,6 @@ const DinoChart = ({ Dino, side = "left" }) => {
   };
 
   const chartOptions = {
-    elements: {
-      point: {
-        pointBorderWidth: 0,
-      },
-    },
     scales: {
       r: {
         angleLines: {

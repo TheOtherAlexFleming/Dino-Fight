@@ -9,7 +9,6 @@ const DinoSelect = ({
   isModalOpen,
   setIsModalOpen,
 }) => {
-  console.log(Dinos);
   return (
     <div
       className="dino-selection"
