@@ -119,6 +119,28 @@
   cursor: pointer;
 }
 
+.edit-btn {
+  position: absolute;
+  left: 0.5rem;
+  border: 1px solid var(--black);
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.edit-btn:hover {
+  cursor: pointer;
+}
+
+.pen {
+  position: absolute;
+  left: 0.27em;
+  top: 0.25em;
+  line-height: 0;
+}
+
 .add-dino-btn {
   display: flex;
   flex-direction: row;

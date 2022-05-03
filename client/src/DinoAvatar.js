@@ -1,5 +1,7 @@
 import axios from "axios";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 const DinoAvatar = ({
   Dino,
@@ -20,7 +22,8 @@ const DinoAvatar = ({
     }
   };
 
-  // actual API call, deletes from DB
+  // actual API call, deletes from DB, also deletes FE to
+  // eliminate latent deletion
   const deleteDino = async (Dino) => {
     console.log(`Deleting ${Dino.name}`);
     try {
@@ -33,15 +36,13 @@ const DinoAvatar = ({
     }
   };
 
-  //FE removal from UI (soft deletion)
-  // const deleteDino = (Dino) => {
-  //   setAllDinos(allDinos.filter((dinosaur) => Dino._id !== id));
-  // };
-
   return (
     <div className="dino-thumb-container">
       <button className="close-x" onClick={() => deleteDino(Dino)}>
         X
+      </button>
+      <button className="edit-btn">
+        <FontAwesomeIcon icon={faPen} className="pen" />
       </button>
       <img
         src={Dino.image}

@@ -6,7 +6,7 @@ const dinoSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide name"],
       minLength: [5, "Dinosaur must have at least 5 characters!"],
-      maxLength: [30, "what kind of long ass dinosaur name is that?"],
+      maxLength: [30, "What kind of long ass dinosaur name is that?"],
     },
     image: {
       type: String,
@@ -14,9 +14,9 @@ const dinoSchema = new mongoose.Schema(
     },
     size: {
       type: Number,
-      required: [true, "Please provide weight."],
-      min: [0.1, "What kind of baby dinosaur is that?"],
-      max: [27, "No animal is that large."],
+      required: [true, "Please provide size."],
+      min: [1, "What kind of baby dinosaur is that?"],
+      max: [10, "No animal is that large."],
     },
     defence: {
       type: Number,
