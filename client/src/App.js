@@ -37,6 +37,7 @@ const App = () => {
 
   useEffect(() => {
     setAllDinos();
+    setActiveDinos([]);
   }, [isAddModalOpen, isEditModalOpen]);
 
   return (
