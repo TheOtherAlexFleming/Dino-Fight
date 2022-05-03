@@ -3,11 +3,6 @@ import React from "react";
 const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
   let active = false;
 
-  //active dino management
-  if (ActiveDinos.includes(Dino)) {
-    active = true;
-  }
-
   const toggleActive = () => {
     if (ActiveDinos.includes(Dino)) {
       setActiveDinos(ActiveDinos.filter((ActiveDino) => ActiveDino != Dino));
@@ -21,7 +16,11 @@ const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
   };
 
   return (
-    <div className={`dino-thumb-container ${active ? "active" : ""}`}>
+    <div
+      className={`dino-thumb-container ${
+        ActiveDinos.includes(Dino) ? "active" : ""
+      }`}
+    >
       <img
         src={Dino.image}
         alt={Dino.name}

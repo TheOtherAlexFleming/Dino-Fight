@@ -10,10 +10,9 @@ const AddDinoModal = ({ isModalOpen, setIsModalOpen }) => {
     const size = parseInt(e.target["dinosize"].value);
     const defence = parseInt(e.target["defence"].value);
     const attack = parseInt(e.target["attack"].value);
-    const specialAbilityText = e.target["specialAbilityText"].value;
-    const specialAbilityRating = parseInt(
-      e.target["specialAbilityRating"].value
-    );
+    const specialAbilityText = e.target["specialAbilityText"].value || "";
+    const specialAbilityRating =
+      parseInt(e.target["specialAbilityRating"].value) || 0;
     console.log(name, image, size, defence, attack);
     try {
       await axios.post(
@@ -31,7 +30,7 @@ const AddDinoModal = ({ isModalOpen, setIsModalOpen }) => {
       );
       setIsModalOpen(false);
     } catch (error) {
-      console.log(error);
+      console.log(error.toJSON());
     }
   };
 
@@ -39,19 +38,14 @@ const AddDinoModal = ({ isModalOpen, setIsModalOpen }) => {
     <div className={`modal-container ${isModalOpen ? "" : "hidden"}`}>
       <div className="modal">
         <h2>Add Dino</h2>
-        <form
-          className="add-dino-form"
-          //   action="http://localhost:5000/dinos"
-          //   method="post"
-          onSubmit={(e) => submitDino(e)}
-        >
+        <form className="add-dino-form" onSubmit={(e) => submitDino(e)}>
           <ul>
             <li>
               <label htmlFor="dinoname">Dino Name:</label>
               <input id="dinoname" type="text" />
             </li>
             <li>
-              <label htmlFor="dinosize">Size (metres):</label>
+              <label htmlFor="dinosize">Size (1-10):</label>
               <input id="dinosize" type="number" />
             </li>
             <li>

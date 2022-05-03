@@ -18,7 +18,6 @@ const App = () => {
       const response = await axios.get("http://localhost:5000/dinos", {
         crossdomain: true,
       });
-      console.log(response);
       const data = response.data;
       setDinos(data);
 
