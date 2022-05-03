@@ -52,23 +52,22 @@
 }
 
 .dino-selection {
-  /* position: absolute; */
-  /* bottom: 0em; */
   width: 100%;
-  /* min-height: 22vh; */
-  /* background-color: blue; */
-  /* overflow-x: hidden; */
-  /* margin: 1em 0; */
-  /* padding: 1em; */
 }
 
 .dino-thumb-container {
   position: relative;
-  box-shadow: 8px 4px 4px 0px #000000;
+  box-shadow: 0.5em 0.25em 0.25em 0 #000000;
   width: 7.5em;
   height: 7.5em;
   border-radius: 50%;
   margin: auto;
+}
+
+.dino-thumb-container:hover {
+  transform: translateX(-0.25em) translateY(-0.25em);
+  box-shadow: 0.75em 0.5em 0.25em 0 #000000;
+  cursor: pointer;
 }
 
 .dino-selection {
@@ -99,12 +98,6 @@
   background-color: var(--white);
 }
 
-.dino-thumb:hover {
-  transform: translateX(-0.25em) translateY(-0.25em);
-  box-shadow: 0.75em 0.5em 0.25em 0 #000000;
-  cursor: pointer;
-}
-
 .dino-thumb.active {
   border: 4px solid var(--tertiary);
 }
@@ -120,6 +113,10 @@
   width: 1.5rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 600;
+}
+
+.close-x:hover {
+  cursor: pointer;
 }
 
 .add-dino-btn {

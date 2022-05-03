@@ -4,6 +4,7 @@ import DinoAvatar from "./DinoAvatar.js";
 
 const DinoSelect = ({
   Dinos,
+  setDinos,
   ActiveDinos,
   setActiveDinos,
   isModalOpen,
@@ -20,6 +21,8 @@ const DinoSelect = ({
           return (
             <DinoAvatar
               Dino={Dino}
+              allDinos={Dinos}
+              setAllDinos={setDinos}
               setActiveDinos={setActiveDinos}
               ActiveDinos={ActiveDinos}
             />

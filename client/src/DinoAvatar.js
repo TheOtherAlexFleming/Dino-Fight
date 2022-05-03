@@ -1,8 +1,13 @@
+import axios from "axios";
 import React from "react";
 
-const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
-  let active = false;
-
+const DinoAvatar = ({
+  Dino,
+  allDinos,
+  setAllDinos,
+  ActiveDinos,
+  setActiveDinos,
+}) => {
   const toggleActive = () => {
     if (ActiveDinos.includes(Dino)) {
       setActiveDinos(ActiveDinos.filter((ActiveDino) => ActiveDino != Dino));
@@ -15,9 +20,28 @@ const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
     }
   };
 
+  // actual API call, deletes from DB
+  // const deleteDino = async (Dino) => {
+  //   console.log(`Deleting ${Dino.name}`);
+  //   try {
+  //     await axios.delete(`https://localhost:5000/${Dino._id}`, {
+  //       crossorigin: true,
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  //FE removal from UI (soft deletion)
+  const deleteDino = (id) => {
+    setAllDinos(allDinos.filter((dinosaur) => dinosaur._id !== id));
+  };
+
   return (
     <div className="dino-thumb-container">
-      <button className="close-x">X</button>
+      <button className="close-x" onClick={() => deleteDino(Dino._id)}>
+        X
+      </button>
       <img
         src={Dino.image}
         alt={Dino.name}

@@ -50,6 +50,7 @@ const App = () => {
       </div>
       <DinoSelect
         Dinos={Dinos}
+        setDinos={setDinos}
         ActiveDinos={ActiveDinos}
         setActiveDinos={setActiveDinos}
         isModalOpen={isModalOpen}
