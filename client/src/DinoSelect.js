@@ -9,6 +9,8 @@ const DinoSelect = ({
   setActiveDinos,
   isModalOpen,
   setIsModalOpen,
+  setIsEditModalOpen,
+  setEditedDino,
 }) => {
   return (
     <div
@@ -25,6 +27,8 @@ const DinoSelect = ({
               setAllDinos={setDinos}
               setActiveDinos={setActiveDinos}
               ActiveDinos={ActiveDinos}
+              setIsEditModalOpen={setIsEditModalOpen}
+              setEditedDino={setEditedDino}
             />
           );
         })}

@@ -7,11 +7,14 @@ import DinoLeft from "./DinoLeft.js";
 import DinoRight from "./DinoRight.js";
 import AddDinoModal from "./AddDinoModal.js";
 import axios from "axios";
+import EditDinoModal from "./EditDinoModal.js";
 
 const App = () => {
   const [Dinos, setDinos] = useState(testRexes);
   const [ActiveDinos, setActiveDinos] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editedDino, setEditedDino] = useState({});
 
   const setAllDinos = async () => {
     try {
@@ -34,12 +37,19 @@ const App = () => {
 
   useEffect(() => {
     setAllDinos();
-  }, [isModalOpen]);
+  }, [isAddModalOpen, isEditModalOpen]);
 
   return (
     <div className="wrapper">
-      <AddDinoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-      {/* <button onClick={() => getAllDinos()}>get dinos</button> */}
+      <AddDinoModal
+        isModalOpen={isAddModalOpen}
+        setIsModalOpen={setIsAddModalOpen}
+      />
+      <EditDinoModal
+        isEditModalOpen={isEditModalOpen}
+        setIsEditModalOpen={setIsEditModalOpen}
+        Dino={editedDino}
+      />
       <div className="main-dinos">
         <DinoLeft leftDino={ActiveDinos[0]} />
         <DinoRight rightDino={ActiveDinos[1]} />
@@ -53,8 +63,10 @@ const App = () => {
         setDinos={setDinos}
         ActiveDinos={ActiveDinos}
         setActiveDinos={setActiveDinos}
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
+        isModalOpen={isAddModalOpen}
+        setIsModalOpen={setIsAddModalOpen}
+        setIsEditModalOpen={setIsEditModalOpen}
+        setEditedDino={setEditedDino}
       />
     </div>
   );

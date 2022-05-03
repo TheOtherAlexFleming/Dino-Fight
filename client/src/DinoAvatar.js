@@ -9,6 +9,8 @@ const DinoAvatar = ({
   setAllDinos,
   ActiveDinos,
   setActiveDinos,
+  setEditedDino,
+  setIsEditModalOpen,
 }) => {
   const toggleActive = () => {
     if (ActiveDinos.includes(Dino)) {
@@ -20,6 +22,12 @@ const DinoAvatar = ({
     } else {
       setActiveDinos([...ActiveDinos, Dino]);
     }
+  };
+
+  const openEdit = (Dino) => {
+    setEditedDino(Dino);
+    console.log(Dino);
+    setIsEditModalOpen(true);
   };
 
   // actual API call, deletes from DB, also deletes FE to
@@ -41,7 +49,7 @@ const DinoAvatar = ({
       <button className="close-x" onClick={() => deleteDino(Dino)}>
         X
       </button>
-      <button className="edit-btn">
+      <button className="edit-btn" onClick={() => openEdit(Dino)}>
         <FontAwesomeIcon icon={faPen} className="pen" />
       </button>
       <img
