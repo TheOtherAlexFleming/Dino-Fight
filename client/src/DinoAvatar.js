@@ -16,16 +16,14 @@ const DinoAvatar = ({ Dino, ActiveDinos, setActiveDinos }) => {
   };
 
   return (
-    <div
-      className={`dino-thumb-container ${
-        ActiveDinos.includes(Dino) ? "active" : ""
-      }`}
-    >
+    <div className="dino-thumb-container">
+      <button className="close-x">X</button>
       <img
         src={Dino.image}
         alt={Dino.name}
         id={Dino._id}
-        className={`dino-thumb ${active ? "active" : ""}`}
+        // className={`dino-thumb ${active ? "active" : ""}`}
+        className={`dino-thumb ${ActiveDinos.includes(Dino) ? "active" : ""}`}
         onClick={() => toggleActive()}
       />
     </div>
