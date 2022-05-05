@@ -1,19 +1,27 @@
 import axios from "axios";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const EditDinoModal = ({ isEditModalOpen, setIsEditModalOpen, Dino }) => {
-  console.log(Dino);
+  console.log(Dino, Dino.name);
 
-  const [form, setForm] = useState({
-    name: Dino.name,
-    attack: Dino.attack,
-    defence: Dino.defence,
-    image: Dino.image,
-    size: Dino.size,
-    specialAbilityRating: Dino.specialAbilityRating,
-    specialAbilityText: Dino.specialAbilityText,
-  });
+  const [form, setForm] = useState({});
+
+  useEffect(() => {
+    formInit();
+  }, [isEditModalOpen]);
+
+  const formInit = () => {
+    setForm({
+      name: Dino.name,
+      attack: Dino.attack,
+      defence: Dino.defence,
+      image: Dino.image,
+      size: Dino.size,
+      specialAbilityRating: Dino.specialAbilityRating,
+      specialAbilityText: Dino.specialAbilityText,
+    });
+  };
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
@@ -78,15 +86,30 @@ const EditDinoModal = ({ isEditModalOpen, setIsEditModalOpen, Dino }) => {
             </li>
             <li>
               <label htmlFor="defence">Defence (1-10):</label>
-              <input id="defence" type="number" value={form.defence} />
+              <input
+                id="defence"
+                type="number"
+                value={form.defence}
+                onChange={handleChange}
+              />
             </li>
             <li>
               <label htmlFor="attack">Attack (1-10):</label>
-              <input id="attack" type="number" value={form.attack} />
+              <input
+                id="attack"
+                type="number"
+                value={form.attack}
+                onChange={handleChange}
+              />
             </li>
             <li>
               <label htmlFor="image">Image URL:</label>
-              <input id="image" type="text" value={form.image} />
+              <input
+                id="image"
+                type="text"
+                value={form.image}
+                onChange={handleChange}
+              />
             </li>
             <li>
               <label htmlFor="specialAbilityText">Special Ability:</label>
@@ -94,6 +117,7 @@ const EditDinoModal = ({ isEditModalOpen, setIsEditModalOpen, Dino }) => {
                 id="specialAbilityText"
                 type="text"
                 value={form.specialAbilityText}
+                onChange={handleChange}
               />
             </li>
             <li>
@@ -104,6 +128,7 @@ const EditDinoModal = ({ isEditModalOpen, setIsEditModalOpen, Dino }) => {
                 id="specialAbilityRating"
                 type="number"
                 value={form.specialAbilityRating}
+                onChange={handleChange}
               />
             </li>
           </ul>
