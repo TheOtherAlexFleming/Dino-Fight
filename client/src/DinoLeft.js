@@ -13,6 +13,10 @@ const DinoLeft = ({ leftDino }) => {
           />
         </div>
         <h2 className="big-dino-name">{leftDino.name}</h2>
+        <div className="special-container">
+          <div className="special-bar"></div>
+          <p className="special-text">Special: Swarm</p>
+        </div>
         <DinoChart Dino={leftDino} />
       </div>
     );
