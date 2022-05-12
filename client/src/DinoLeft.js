@@ -3,6 +3,14 @@ import DinoChart from "./DinoChart.js";
 
 const DinoLeft = ({ leftDino }) => {
   if (leftDino) {
+    //for special bar, didn't want to use chart.js for practice
+    const specialBarStyle = {
+      backgroundImage: `linear-gradient(to top, var(--secondary) ${
+        10 * leftDino.specialAbilityRating
+      }%, rgba(0,0,0,0) ${10 * leftDino.specialAbilityRating}%)`,
+      transition: "background-image 1s linear",
+    };
+
     return (
       <div className="main-dino-container">
         <div className="big-dino">
@@ -14,8 +22,8 @@ const DinoLeft = ({ leftDino }) => {
         </div>
         <h2 className="big-dino-name">{leftDino.name}</h2>
         <div className="special-container">
-          <div className="special-bar"></div>
-          <p className="special-text">Special: Swarm</p>
+          <div className="special-bar" style={specialBarStyle}></div>
+          <p className="special-text">Special: {leftDino.specialAbilityText}</p>
         </div>
         <DinoChart Dino={leftDino} />
       </div>
